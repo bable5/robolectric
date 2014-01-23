@@ -6,12 +6,14 @@ public class ActivityData {
   private final String name;
   private final String label;
   private final String themeRef;
+  private final String taskAffinity;
   private final List<IntentFilterData> intentFilter;
 
-  public ActivityData(String name, String label, String themeRef, List<IntentFilterData> intentFilterData) {
+  public ActivityData(String name, String label, String themeRef, String taskAffinity, List<IntentFilterData> intentFilterData) {
     this.name = name;
     this.label = label;
     this.themeRef = themeRef;
+    this.taskAffinity = taskAffinity;
     this.intentFilter = intentFilterData;
   }
 
@@ -25,6 +27,10 @@ public class ActivityData {
 
   public String getThemeRef() {
     return themeRef;
+  }
+
+  public String getTaskAffinity() {
+    return taskAffinity;
   }
 
   public List<IntentFilterData> getIntentFilters() {

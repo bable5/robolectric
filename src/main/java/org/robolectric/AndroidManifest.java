@@ -225,6 +225,7 @@ public class AndroidManifest {
       Node nameAttr = attributes.getNamedItem("android:name");
       Node themeAttr = attributes.getNamedItem("android:theme");
       Node labelAttr = attributes.getNamedItem("android:label");
+      Node activityAttr = attributes.getNamedItem("android:taskAffinity");
       if (nameAttr == null) continue;
       String activityName = resolveClassRef(nameAttr.getNodeValue());
 
@@ -234,6 +235,7 @@ public class AndroidManifest {
           new ActivityData(activityName,
               labelAttr == null ? null : labelAttr.getNodeValue(),
               themeAttr == null ? null : resolveClassRef(themeAttr.getNodeValue()),
+              activityAttr == null ? null : activityAttr.getNodeValue(),
               intentFilterData
           ));
     }
